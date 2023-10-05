@@ -28,7 +28,7 @@ app.post('/genZToBoomer', async (req, res, next) => {
     const { userInput } = req.body;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4",
       messages: [
         {
           "role": "system",
@@ -60,7 +60,7 @@ app.post('/boomerToGenZ', async (req, res, next) => {
     const { userInput } = req.body;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4",
       messages: [
         {
           "role": "system",
