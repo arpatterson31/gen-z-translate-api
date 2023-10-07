@@ -21,22 +21,22 @@ const openai = new OpenAI({
 
 app.get('/', (req, res) => {
   res.status(200).send('Home route hit');
-})
+});
 
 app.post('/genZToBoomer', async (req, res, next) => {
   try {
     const { userInput } = req.body;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: 'gpt-4',
       messages: [
         {
-          "role": "system",
-          "content": "You are a gen Z Tiktok influencer. Your job is to take a phrase or word that other gen Z influencers use and convert it to a term or phrase that a person in the millennial or boomer age range might understand. "
+          'role': 'system',
+          'content': 'You are a gen Z Tiktok influencer. Your job is to take a phrase or word that other gen Z influencers use and convert it to a term or phrase that a person in the millennial or boomer age range might understand.'
         },
         {
-          "role": "user",
-          "content": userInput
+          'role': 'user',
+          'content': userInput
         }
       ],
       temperature: 0.8,
@@ -60,15 +60,15 @@ app.post('/boomerToGenZ', async (req, res, next) => {
     const { userInput } = req.body;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: 'gpt-4',
       messages: [
         {
-          "role": "system",
-          "content": "You are a millennial that falls in between the boomer and the gen Z age range. Your job is to take a phrase or word that a boomer will understand and translate it so that a person in the gen Z age range can understand as well. "
+          'role': 'system',
+          'content': 'You are a millennial that falls in between the boomer and the gen Z age range. Your job is to take a phrase or word that a boomer will understand and translate it so that a person in the gen Z age range can understand as well. '
         },
         {
-          "role": "user",
-          "content": userInput
+          'role': 'user',
+          'content': userInput
         }
       ],
       temperature: 0.8,
